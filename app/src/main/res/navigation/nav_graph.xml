@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/loginFragment">
+
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.example.sprint.fragments.LoginFragment"
+        android:label="fragment_login"
+        tools:layout="@layout/fragment_login" >
+        <action
+            android:id="@+id/action_loginFragment_to_signupFragment"
+            app:destination="@id/signupFragment" />
+        <action
+            android:id="@+id/action_loginFragment_to_functionalitiesFragment"
+            app:destination="@id/functionalitiesFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/signupFragment"
+        android:name="com.example.sprint.SignupFragment"
+        android:label="fragment_signup"
+        tools:layout="@layout/fragment_signup" >
+        <action
+            android:id="@+id/action_signupFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/functionalitiesFragment"
+        android:name="com.example.sprint.fragments.FunctionalitiesFragment"
+        android:label="fragment_functionalities"
+        tools:layout="@layout/fragment_functionalities" >
+        <action
+            android:id="@+id/action_functionalitiesFragment_to_tglRegFragment"
+            app:destination="@id/tglRegFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/tglRegFragment"
+        android:name="com.example.sprint.fragments.TglRegFragment"
+        android:label="fragment_tgl_reg"
+        tools:layout="@layout/fragment_tgl_reg" />
+</navigation>

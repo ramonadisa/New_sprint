@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragments.FunctionalitiesFragment">
+
+    <TextView
+        android:id="@+id/tvHomePage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Home Page"
+        android:textColor="@color/button_background"
+        android:textSize="40sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/btnRecReg"
+        app:layout_constraintStart_toStartOf="@+id/btnRecReg"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.105" />
+
+    <Button
+        android:id="@+id/btnRecReg"
+        android:layout_width="301dp"
+        android:layout_height="76dp"
+        android:backgroundTint="@color/button_background"
+        android:elevation="20dp"
+        android:text="Recruitment and Registration of TGLs"
+        android:textSize="20sp"
+        app:cornerRadius="15dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/btnConTest"
+        app:layout_constraintStart_toStartOf="@+id/btnConTest"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.285" />
+
+    <Button
+        android:id="@+id/btnConTest"
+        android:layout_width="301dp"
+        android:layout_height="76dp"
+        android:backgroundTint="@color/button_background"
+        android:elevation="20dp"
+        android:text="Conduct Tests"
+        android:textSize="20sp"
+        app:cornerRadius="15dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/btnConInt"
+        app:layout_constraintStart_toStartOf="@+id/btnConInt"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.458" />
+
+    <Button
+        android:id="@+id/btnConInt"
+        android:layout_width="301dp"
+        android:layout_height="76dp"
+        android:backgroundTint="@color/button_background"
+        android:elevation="20dp"
+        android:text="Conduct Interviews"
+        android:textSize="20sp"
+        app:cornerRadius="15dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/btnRegSet"
+        app:layout_constraintStart_toStartOf="@+id/btnRegSet"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.653" />
+
+    <Button
+        android:id="@+id/btnRegSet"
+        android:layout_width="301dp"
+        android:layout_height="76dp"
+        android:backgroundTint="@color/button_background"
+        android:elevation="20dp"
+        android:text="Register and Setup Trust Groups"
+        android:textSize="20sp"
+        app:cornerRadius="15dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.823" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Users/Adisa Ramon/AndroidStudioProjects/Sprint/app/src/main/res/drawable/border.xml" value="0.1" />
+        <entry key="..\:/Users/Adisa Ramon/AndroidStudioProjects/Sprint/app/src/main/res/drawable/my_image.xml" value="0.1" />
+        <entry key="..\:/Users/Adisa Ramon/AndroidStudioProjects/Sprint/app/src/main/res/layout/activity_main.xml" value="0.34791666666666665" />
+        <entry key="..\:/Users/Adisa Ramon/AndroidStudioProjects/Sprint/app/src/main/res/layout/fragment_functionalities.xml" value="0.3564102564102564" />
+        <entry key="..\:/Users/Adisa Ramon/AndroidStudioProjects/Sprint/app/src/main/res/layout/fragment_login.xml" value="0.3081081081081081" />
+        <entry key="..\:/Users/Adisa Ramon/AndroidStudioProjects/Sprint/app/src/main/res/layout/fragment_signup.xml" value="0.30727762803234504" />
+        <entry key="..\:/Users/Adisa Ramon/AndroidStudioProjects/Sprint/app/src/main/res/layout/fragment_tgl_reg.xml" value="0.3081081081081081" />
+        <entry key="..\:/Users/Adisa Ramon/AndroidStudioProjects/Sprint/app/src/main/res/layout/id_list.xml" value="0.3435185185185185" />
+        <entry key="..\:/Users/Adisa Ramon/AndroidStudioProjects/Sprint/app/src/main/res/layout/sex_list.xml" value="0.3435185185185185" />
+        <entry key="..\:/Users/Adisa Ramon/AndroidStudioProjects/Sprint/app/src/main/res/layout/state_list.xml" value="0.3623046875" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="11" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>
