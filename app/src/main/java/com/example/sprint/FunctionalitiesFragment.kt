@@ -34,5 +34,9 @@ class FunctionalitiesFragment : Fragment() {
         binding.btnRecReg.setOnClickListener {
             navController.navigate(R.id.action_functionalitiesFragment_to_tglRegFragment)
         }
+
+        binding.btnConTest.setOnClickListener {
+            navController.navigate(R.id.action_functionalitiesFragment_to_tglTestFragment)
+        }
     }
 }
