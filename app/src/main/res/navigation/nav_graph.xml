@@ -34,10 +34,18 @@
         <action
             android:id="@+id/action_functionalitiesFragment_to_tglRegFragment"
             app:destination="@id/tglRegFragment" />
+        <action
+            android:id="@+id/action_functionalitiesFragment_to_tglTestFragment"
+            app:destination="@id/tglTestFragment" />
     </fragment>
     <fragment
         android:id="@+id/tglRegFragment"
         android:name="com.example.sprint.fragments.TglRegFragment"
         android:label="fragment_tgl_reg"
         tools:layout="@layout/fragment_tgl_reg" />
+    <fragment
+        android:id="@+id/tglTestFragment"
+        android:name="com.example.sprint.tglTestFragment"
+        android:label="fragment_tgl_test"
+        tools:layout="@layout/fragment_tgl_test" />
 </navigation>

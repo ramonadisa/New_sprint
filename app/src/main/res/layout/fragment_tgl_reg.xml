@@ -199,15 +199,14 @@
         android:layout_weight="1"
     android:clickable="true"/>
     </com.google.android.material.textfield.TextInputLayout>
-<!--        android:fontFamily=&quot;@font/google_sans_medium&quot;-->
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/layoutLGA"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:hint="LGA"
-        app:endIconMode="clear_text"
         app:endIconTint="@color/card_background"
         app:boxBackgroundColor="#FFFFFF"
         app:boxBackgroundMode="outline"
@@ -217,13 +216,13 @@
         app:layout_constraintTop_toBottomOf="@+id/layoutState">
 
 
-
-    <com.google.android.material.textfield.TextInputEditText
+    <AutoCompleteTextView
         android:id="@+id/etLGA"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:inputType="text"
-        android:singleLine="true"/>
+        android:inputType="none"
+        android:layout_weight="1"
+        android:clickable="true"/>
 
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -251,6 +250,30 @@
         android:singleLine="true"/>
     </com.google.android.material.textfield.TextInputLayout>
 
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/layoutIDType"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:hint="Type of ID"
+            app:boxBackgroundColor="#FFFFFF"
+            app:boxBackgroundMode="outline"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/layoutHub">
+
+            <AutoCompleteTextView
+                android:id="@+id/dropDownIDType"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="none"
+                android:textSize="16dp"
+                android:layout_weight="1"
+                android:clickable="true"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/layoutID"
@@ -265,7 +288,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/layoutHub">
+        app:layout_constraintTop_toBottomOf="@id/layoutIDType">
 
 
     <com.google.android.material.textfield.TextInputEditText
@@ -276,43 +299,17 @@
         android:singleLine="true"/>
     </com.google.android.material.textfield.TextInputLayout>
 
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/layoutIDType"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:hint="Type of ID"
-        app:boxBackgroundColor="#FFFFFF"
-        app:boxBackgroundMode="outline"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/layoutID">
-
-    <AutoCompleteTextView
-        android:id="@+id/dropDownIDType"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:inputType="none"
-        android:textSize="16dp"
-        android:layout_weight="1"
-        android:clickable="true"/>
-    </com.google.android.material.textfield.TextInputLayout>
-
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/layoutIDImage"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
-
             app:boxBackgroundColor="#FFFFFF"
             app:boxBackgroundMode="outline"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/layoutIDType">
+            app:layout_constraintTop_toBottomOf="@id/layoutID">
 
             <TextView
                 android:id="@+id/tvUpload"
@@ -323,7 +320,6 @@
                 android:textColor="@color/button_background"
                 android:textSize="20sp"
                 android:textStyle="bold"/>
-
 
         </com.google.android.material.textfield.TextInputLayout>
 

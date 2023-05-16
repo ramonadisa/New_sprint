@@ -48,67 +48,103 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
 
-                <EditText
-                    android:id="@+id/etSU_Name"
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/layoutName"
                     android:layout_width="306dp"
                     android:layout_height="67dp"
-                    android:layout_marginStart="24dp"
                     android:layout_marginTop="20dp"
                     android:hint="Full Name"
-                    android:inputType="text"
-                    android:textColor="@color/white"
-                    android:textColorHint="@color/white"
+                    android:textColor="@color/black"
+                    android:textColorHint="@color/black"
                     android:textSize="20sp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.5"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
+                    app:layout_constraintTop_toTopOf="parent">
 
-                <EditText
-                    android:id="@+id/etSU_Email"
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/etSU_Name"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@color/white"
+                        android:ems="15"
+                        android:inputType="text"/>
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/layoutMail"
                     android:layout_width="306dp"
                     android:layout_height="68dp"
-                    android:layout_marginStart="24dp"
                     android:hint="Email"
-                    android:inputType="textEmailAddress"
-                    android:textColor="@color/white"
-                    android:textColorHint="@color/white"
+                    android:textColor="@color/black"
+                    android:textColorHint="@color/black"
                     android:textSize="20sp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.5"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/etSU_Name"
-                    app:layout_constraintVertical_bias="0.337" />
+                    app:layout_constraintTop_toBottomOf="@+id/layoutName">
 
-                <EditText
-                    android:id="@+id/etSU_Password"
-                    android:layout_width="303dp"
-                    android:layout_height="70dp"
-                    android:layout_marginStart="24dp"
-                    android:hint="Password"
-                    android:textColor="@color/white"
-                    android:textColorHint="@color/white"
-                    android:textSize="20sp"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.5"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/etSU_Email"
-                    app:layout_constraintVertical_bias="0.561" />
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/etSU_Email"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@color/white"
+                        android:ems="15"
+                        android:inputType="textEmailAddress"/>
 
-                <EditText
-                    android:id="@+id/etSU_ConfirmPassword"
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/layoutPassword"
                     android:layout_width="306dp"
                     android:layout_height="73dp"
-                    android:layout_marginStart="24dp"
-                    android:hint="confirm password"
-                    android:textColor="@color/white"
-                    android:textColorHint="@color/white"
+                    android:hint="Password"
+                    android:textColor="@color/black"
+                    android:textColorHint="@color/black"
                     android:textSize="20sp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.5"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/etSU_Password"
-                    app:layout_constraintVertical_bias="0.777" />
+                    app:layout_constraintTop_toBottomOf="@+id/layoutMail"
+                    app:passwordToggleEnabled="true">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/etSU_Password"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@color/white"
+                        android:ems="15"
+                        android:inputType="textPassword" />
+
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/layoutConfirmPassword"
+                    android:layout_width="306dp"
+                    android:layout_height="73dp"
+                    android:hint="confirm password"
+                    android:textColor="@color/black"
+                    android:textColorHint="@color/black"
+                    android:textSize="20sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/layoutPassword"
+                    app:passwordToggleEnabled="true">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/etSU_ConfirmPassword"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@color/white"
+                        android:ems="15"
+                        android:inputType="textPassword" />
+
+                </com.google.android.material.textfield.TextInputLayout>
 
                 <Button
                     android:id="@+id/btnSignup"
@@ -124,7 +160,7 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.5"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/etSU_ConfirmPassword"
+                    app:layout_constraintTop_toBottomOf="@+id/layoutConfirmPassword"
                     app:layout_constraintVertical_bias="0.939" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>

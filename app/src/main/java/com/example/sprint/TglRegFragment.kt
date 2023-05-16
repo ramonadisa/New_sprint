@@ -33,6 +33,7 @@ class TglRegFragment : Fragment() {
     private var selectedFileUri: Uri? = null
     private lateinit var viewModel: MyViewModel
     private var selectedImageUri: Uri? = null
+    private var selectedState = ""
 
     companion object {
         private const val PICK_IMAGE_REQUEST = 1
@@ -77,7 +78,19 @@ class TglRegFragment : Fragment() {
             showDatePickerDialog(binding.etDOB)
         }
 
-//        binding.etImage.setOnClickListener { showFileChooser() }
+        val lga = binding.etLGA
+        binding.dropDownState.setOnItemClickListener { parent, view, position, id ->
+            selectedState = adapterState.getItem(position).toString()
+            binding.etLGA.setText("")
+            val lgaAdapter = ArrayAdapter(requireContext(), android.R.layout.simple_list_item_1, getLGA(selectedState))
+            lga.setAdapter(lgaAdapter)
+            //selectedState = parent?.selectedItem as String
+            Toast.makeText(
+                requireContext(),
+                "Selected state is: $selectedState",
+                Toast.LENGTH_LONG
+            ).show()
+        }
 
         binding.etImage.setOnClickListener {
             openFileChooser()
@@ -199,6 +212,48 @@ class TglRegFragment : Fragment() {
             etID.setText("")
             dropDownIDType.setText("")
             etImage.setImageURI(null)
+        }
+    }
+
+    private fun getLGA(state: String): Array<String> {
+        return when (state) {
+            getString(R.string.Abia) -> resources.getStringArray(R.array.Abia)
+            getString(R.string.Adamawa) -> resources.getStringArray(R.array.Adamawa)
+            getString(R.string.Akwa) -> resources.getStringArray(R.array.Akwa_Ibom)
+            getString(R.string.Anambra) -> resources.getStringArray(R.array.Anambra)
+            getString(R.string.Bauchi) -> resources.getStringArray(R.array.Bauchi)
+            getString(R.string.Bayelsa) -> resources.getStringArray(R.array.Bayelsa)
+            getString(R.string.Benue) -> resources.getStringArray(R.array.Benue)
+            getString(R.string.Borno) -> resources.getStringArray(R.array.Borno)
+            getString(R.string.Cross_River) -> resources.getStringArray(R.array.Cross_River)
+            getString(R.string.Delta) -> resources.getStringArray(R.array.Delta)
+            getString(R.string.Ebonyi) -> resources.getStringArray(R.array.Ebonyi)
+            getString(R.string.Edo) -> resources.getStringArray(R.array.Edo)
+            getString(R.string.Ekiti) -> resources.getStringArray(R.array.Ekiti)
+            getString(R.string.Enugu) -> resources.getStringArray(R.array.Enugu)
+            getString(R.string.Gombe) -> resources.getStringArray(R.array.Gombe)
+            getString(R.string.Imo) -> resources.getStringArray(R.array.Imo)
+            getString(R.string.Jigawa) -> resources.getStringArray(R.array.Jigawa)
+            getString(R.string.Kaduna) -> resources.getStringArray(R.array.Kaduna)
+            getString(R.string.Kano) -> resources.getStringArray(R.array.Kano)
+            getString(R.string.Katsina) -> resources.getStringArray(R.array.Katsina)
+            getString(R.string.Kebbi) -> resources.getStringArray(R.array.Kebbi)
+            getString(R.string.Kogi) -> resources.getStringArray(R.array.Kogi)
+            getString(R.string.Kwara) -> resources.getStringArray(R.array.Kwara)
+            getString(R.string.Lagos) -> resources.getStringArray(R.array.Lagos)
+            getString(R.string.Nasarawa) -> resources.getStringArray(R.array.Nasarawa)
+            getString(R.string.Niger) -> resources.getStringArray(R.array.Niger)
+            getString(R.string.Ogun) -> resources.getStringArray(R.array.Ogun)
+            getString(R.string.Ondo) -> resources.getStringArray(R.array.Ondo)
+            getString(R.string.Osun) -> resources.getStringArray(R.array.Osun)
+            getString(R.string.Oyo) -> resources.getStringArray(R.array.Oyo)
+            getString(R.string.Plateau) -> resources.getStringArray(R.array.Plateau)
+            getString(R.string.Rivers) -> resources.getStringArray(R.array.Rivers)
+            getString(R.string.Sokoto) -> resources.getStringArray(R.array.Sokoto)
+            getString(R.string.Taraba) -> resources.getStringArray(R.array.Taraba)
+            getString(R.string.Yobe) -> resources.getStringArray(R.array.Yobe)
+            getString(R.string.Zamfara) -> resources.getStringArray(R.array.Zamfara)
+            else -> emptyArray()
         }
     }
 
