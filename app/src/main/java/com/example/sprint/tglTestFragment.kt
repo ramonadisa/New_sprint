@@ -81,19 +81,3 @@ class tglTestFragment : Fragment() {
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
