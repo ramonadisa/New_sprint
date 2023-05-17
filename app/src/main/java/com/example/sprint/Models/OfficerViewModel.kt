@@ -18,7 +18,7 @@ class MyViewModel(
 ) : ViewModel() {
 
     val officers = officerDao.getAllOfficers()
-    val officerIdentifications = tglIdentificationDao.getAllTglIdentifications()
+    val tglIdentifications = tglIdentificationDao.getAllTglIdentifications()
 
 
     fun insertOfficer(officer: Officer) = viewModelScope.launch {
