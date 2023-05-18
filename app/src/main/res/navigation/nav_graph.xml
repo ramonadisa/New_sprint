@@ -42,7 +42,11 @@
         android:id="@+id/tglRegFragment"
         android:name="com.example.sprint.Tgl.TglRegFragment"
         android:label="fragment_tgl_reg"
-        tools:layout="@layout/fragment_tgl_reg" />
+        tools:layout="@layout/fragment_tgl_reg" >
+        <action
+            android:id="@+id/action_tglRegFragment_to_functionalitiesFragment"
+            app:destination="@id/functionalitiesFragment" />
+    </fragment>
     <fragment
         android:id="@+id/tglTestFragment"
         android:name="com.example.sprint.Tgl.tglTestFragment"

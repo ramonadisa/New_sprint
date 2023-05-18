@@ -82,12 +82,6 @@ class TglRegFragment : Fragment() {
             binding.etLGA.setText("")
             val lgaAdapter = ArrayAdapter(requireContext(), android.R.layout.simple_list_item_1, getLGA(selectedState))
             lga.setAdapter(lgaAdapter)
-            //selectedState = parent?.selectedItem as String
-            Toast.makeText(
-                requireContext(),
-                "Selected state is: $selectedState",
-                Toast.LENGTH_LONG
-            ).show()
         }
 
         binding.etImage.setOnClickListener {
@@ -96,6 +90,7 @@ class TglRegFragment : Fragment() {
 
         binding.btnSubmit.setOnClickListener {
             checkInputData()
+            navController.navigate(R.id.action_tglRegFragment_to_functionalitiesFragment)
         }
     }
 
