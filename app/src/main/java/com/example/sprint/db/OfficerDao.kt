@@ -37,7 +37,6 @@ interface TglIdentificationDao {
     @Query("SELECT * FROM tgl_identification_table")
     fun getAllTglIdentifications(): LiveData<List<TglIdentification>>
 
-
 }
 
 

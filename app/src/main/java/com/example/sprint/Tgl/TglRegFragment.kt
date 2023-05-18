@@ -1,4 +1,4 @@
-package com.example.sprint.fragments
+package com.example.sprint.Tgl
 
 import android.app.Activity.RESULT_OK
 import android.app.DatePickerDialog
@@ -19,11 +19,9 @@ import com.example.sprint.databinding.FragmentTglRegBinding
 import com.example.sprint.db.TglIdentification
 import android.content.Intent
 import android.widget.Toast
-import android.widget.ToggleButton
 import androidx.lifecycle.ViewModelProvider
 import com.example.sprint.Models.MainViewModelFactory
 import com.example.sprint.db.AppDatabase
-import androidx.room.OnConflictStrategy
 
 
 class TglRegFragment : Fragment() {
@@ -124,20 +122,20 @@ class TglRegFragment : Fragment() {
                 0,
                 etName.text.toString(),
                 etPhoneNumber.text.toString(),
-                dropDownSex.text,
-                etDOB.text,
+                dropDownSex.text.toString(),
+                etDOB.text.toString(),
                 etBVN.text.toString(),
                 etNIN.text.toString(),
-                dropDownState.text,
+                dropDownState.text.toString(),
                 etLGA.text.toString(),
                 etHub.text.toString(),
                 etID.text.toString(),
-                dropDownIDType.text,
+                dropDownIDType.text.toString(),
                 selectedFileUri.toString(),
             )
 
             selectedFileUri?.let {
-                viewModel.insertOfficerIdentification(
+                viewModel.insertTglIdentification(
                     tglIdentification,
                     requireContext(), // pass the context of the fragment
                     it // pass the selected image Uri
@@ -151,15 +149,15 @@ class TglRegFragment : Fragment() {
         binding.apply {
             val name = etName.text.toString()
             val number = etPhoneNumber.text.toString()
-            val sex = dropDownSex.text
+            val sex = dropDownSex.text.toString()
             val dob = etDOB.text.toString()
             val bvn = etBVN.text.toString()
             val nin = etNIN.text.toString()
-            val state = dropDownState.text
+            val state = dropDownState.text.toString()
             val lga = etLGA.text.toString()
             val hub = etHub.text.toString()
             val id = etID.text.toString()
-            val idtype = dropDownIDType.text
+            val idtype = dropDownIDType.text.toString()
             val image = selectedFileUri
 
             when {

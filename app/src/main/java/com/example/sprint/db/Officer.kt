@@ -1,10 +1,12 @@
 package com.example.sprint.db
 
+import android.os.Parcelable
 import android.text.Editable
 import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.ForeignKey
 import androidx.room.PrimaryKey
+import kotlinx.parcelize.Parcelize
 
 
 @Entity(tableName = "officer_data_table")
@@ -20,6 +22,7 @@ data class Officer(
     var password: String
 )
 
+@Parcelize
 @Entity(tableName = "tgl_identification_table")
 data class TglIdentification(
     @PrimaryKey(autoGenerate = true)
@@ -30,15 +33,15 @@ data class TglIdentification(
     @ColumnInfo(name = "phone_number")
     var phoneNumber: String,
     @ColumnInfo(name = "sex")
-    var sex: Editable,
+    var sex: String,
     @ColumnInfo(name = "date_of_birth")
-    var dateOfBirth: Editable?,
+    var dateOfBirth: String?,
     @ColumnInfo(name = "bvn")
     var bvn: String,
     @ColumnInfo(name = "nin")
     var nin: String,
     @ColumnInfo(name = "state")
-    var state: Editable,
+    var state: String,
     @ColumnInfo(name = "local_govt_area")
     var localGovtArea: String,
     @ColumnInfo(name = "hub")
@@ -46,8 +49,8 @@ data class TglIdentification(
     @ColumnInfo(name = "govt_id")
     var govtId: String,
     @ColumnInfo(name = "govt_id_type")
-    var govtIdType: Editable,
+    var govtIdType: String,
     @ColumnInfo(name = "govt_id_card_image")
     var govtIdCardImage: String
 
-)
+): Parcelable

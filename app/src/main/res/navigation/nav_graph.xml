@@ -40,12 +40,28 @@
     </fragment>
     <fragment
         android:id="@+id/tglRegFragment"
-        android:name="com.example.sprint.fragments.TglRegFragment"
+        android:name="com.example.sprint.Tgl.TglRegFragment"
         android:label="fragment_tgl_reg"
         tools:layout="@layout/fragment_tgl_reg" />
     <fragment
         android:id="@+id/tglTestFragment"
-        android:name="com.example.sprint.tglTestFragment"
+        android:name="com.example.sprint.Tgl.tglTestFragment"
         android:label="fragment_tgl_test"
-        tools:layout="@layout/fragment_tgl_test" />
+        tools:layout="@layout/fragment_tgl_test" >
+        <action
+            android:id="@+id/action_tglTestFragment_to_tglUpdateFragment2"
+            app:destination="@id/tglUpdateFragment2" />
+    </fragment>
+    <fragment
+        android:id="@+id/tglUpdateFragment2"
+        android:name="com.example.sprint.Tgl.TglUpdateFragment"
+        android:label="fragment_tgl_update"
+        tools:layout="@layout/fragment_tgl_update" >
+        <action
+            android:id="@+id/action_tglUpdateFragment2_to_tglTestFragment"
+            app:destination="@id/tglTestFragment" />
+        <argument
+            android:name="updateTgls"
+            app:argType="com.example.sprint.db.TglIdentification" />
+    </fragment>
 </navigation>

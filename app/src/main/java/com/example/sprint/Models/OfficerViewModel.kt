@@ -33,7 +33,7 @@ class MyViewModel(
         }
     }
 
-    fun insertOfficerIdentification(tglIdentification: TglIdentification, context: Context, imageUri: Uri) {
+    fun insertTglIdentification(tglIdentification: TglIdentification, context: Context, imageUri: Uri) {
         viewModelScope.launch {
             withContext(Dispatchers.IO) {
                 // First, save the image to internal storage
@@ -48,6 +48,25 @@ class MyViewModel(
                 // Then, update the officer identification object with the image path
                 tglIdentification.govtIdCardImage = imageFile.absolutePath
                 tglIdentificationDao.insertTglIdentification(tglIdentification)
+            }
+        }
+    }
+
+    fun updateTglIdentification(tglIdentification: TglIdentification, context: Context, imageUri: Uri) {
+        viewModelScope.launch {
+            withContext(Dispatchers.IO) {
+                // First, save the image to internal storage
+                val imageFile = File(context.filesDir, UUID.randomUUID().toString())
+                val inputStream = context.contentResolver.openInputStream(imageUri)
+                inputStream.use { input ->
+                    imageFile.outputStream().use { output ->
+                        input?.copyTo(output)
+                    }
+                }
+
+                // Then, update the officer identification object with the image path
+                tglIdentification.govtIdCardImage = imageFile.absolutePath
+                tglIdentificationDao.updateTglIdentification(tglIdentification)
             }
         }
     }

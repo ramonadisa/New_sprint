@@ -1,12 +1,12 @@
 package com.example.sprint.db
 
 import android.content.Context
-import androidx.room.*
-import com.example.sprint.DateConverter
-import com.example.sprint.EditableConverter
+import androidx.room.Database
+import androidx.room.Room
+import androidx.room.RoomDatabase
 
-@Database(entities = [Officer::class, TglIdentification::class], version = 14, exportSchema = false)
-@TypeConverters(EditableConverter::class, DateConverter::class)
+@Database(entities = [Officer::class, TglIdentification::class], version = 15, exportSchema = false)
+//@TypeConverters(EditableConverter::class, DateConverter::class)
 abstract class AppDatabase : RoomDatabase() {
 
     abstract fun officerDao(): OfficerDao

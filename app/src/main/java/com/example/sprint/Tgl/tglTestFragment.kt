@@ -1,4 +1,4 @@
-package com.example.sprint
+package com.example.sprint.Tgl
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -9,9 +9,9 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
 import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.example.sprint.Models.MainViewModelFactory
 import com.example.sprint.Models.MyViewModel
-import com.example.sprint.databinding.FragmentTglRegBinding
 import com.example.sprint.databinding.FragmentTglTestBinding
 import com.example.sprint.db.AppDatabase
 import com.example.sprint.db.TglIdentification
@@ -20,7 +20,7 @@ class tglTestFragment : Fragment() {
     private lateinit var binding: FragmentTglTestBinding
     private lateinit var navController: NavController
     private lateinit var  viewModel: MyViewModel
-    private lateinit var adapter: TglRecyclerViewAdapter
+    private lateinit var recyclerView: RecyclerView
     private var isListItemClicked = false
     private lateinit var selectedTgl:TglIdentification
 
@@ -52,21 +52,16 @@ class tglTestFragment : Fragment() {
     }
 
     private fun initRecyclerView(){
-        binding.rvTgl.layoutManager = LinearLayoutManager(requireContext())
-        adapter = TglRecyclerViewAdapter { selectedItem: TglIdentification ->
-            listItemClicked(selectedItem)
-        }
-        binding.rvTgl.adapter = adapter
-
-        displayStudentsList()
-    }
-
-    private fun displayStudentsList(){
+       val adapter = TglRecyclerViewAdapter()
+        recyclerView = binding.rvTgl
+        recyclerView.adapter = adapter
+        recyclerView.layoutManager = LinearLayoutManager(requireContext())
         viewModel.tglIdentifications.observe(viewLifecycleOwner) {
             adapter.setList(it)
             adapter.notifyDataSetChanged()
         }
     }
+
 
     private fun listItemClicked(tglIdentification:TglIdentification){
         binding.apply {

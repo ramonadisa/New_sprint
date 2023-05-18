@@ -1,69 +1,76 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:layout_margin="15dp"
-    tools:context=".tglTestFragment">
+    tools:context=".Tgl.tglTestFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center">
+
+        <TextView
+            android:id="@+id/tvLoRT"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="List of Registered TGLs"
+            android:textColor="@color/button_background"
+            android:textSize="30sp"
+            android:textStyle="bold"/>
+
+    </LinearLayout>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvTgl"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
+        android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:layout_marginBottom="10dp"
         android:layout_weight="1"
         android:elevation="10dp"/>
 
+</LinearLayout>
+
+<!--<Button-->
+<!--android:id="@+id/btnSaveTgl"-->
+<!--android:layout_height="wrap_content"-->
+<!--android:layout_width="0dp"-->
+<!--android:layout_weight="1"-->
+<!--android:textSize="20sp"-->
+<!--android:backgroundTint="@color/button_background"-->
+<!--android:elevation="20dp"-->
+<!--android:text="Save" />-->
+
+<!--<Button-->
+<!--android:id="@+id/btnClearTgl"-->
+<!--android:layout_height="wrap_content"-->
+<!--android:layout_width="0dp"-->
+<!--android:layout_weight="1"-->
+<!--android:textSize="20sp"-->
+<!--android:backgroundTint="@color/button_background"-->
+<!--android:elevation="20dp"-->
+<!--android:layout_marginLeft="30dp"-->
+<!--android:text="Clear" />-->
 
     <!--    <EditText-->
-<!--        android:id="@+id/etTglName"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:ems="10"-->
-<!--        android:hint="Tgl's Name"-->
-<!--        android:inputType="textPersonName"-->
-<!--        android:textSize="24sp" />-->
+    <!--        android:id="@+id/etTglName"-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:ems="10"-->
+    <!--        android:hint="Tgl's Name"-->
+    <!--        android:inputType="textPersonName"-->
+    <!--        android:textSize="24sp" />-->
 
-<!--    <EditText-->
-<!--        android:id="@+id/etTglNo"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:ems="10"-->
-<!--        android:hint="Tgl's Number"-->
-<!--        android:inputType="phone"-->
-<!--        android:textSize="24sp" />-->
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-
-        <Button
-            android:id="@+id/btnSaveTgl"
-            android:layout_height="wrap_content"
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:textSize="20sp"
-            android:backgroundTint="@color/button_background"
-            android:elevation="20dp"
-            android:text="Save" />
-
-        <Button
-            android:id="@+id/btnClearTgl"
-            android:layout_height="wrap_content"
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:textSize="20sp"
-            android:backgroundTint="@color/button_background"
-            android:elevation="20dp"
-            android:layout_marginLeft="30dp"
-            android:text="Clear" />
-
-
-    </LinearLayout>
-
-
-</LinearLayout>
+    <!--    <EditText-->
+    <!--        android:id="@+id/etTglNo"-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:ems="10"-->
+    <!--        android:hint="Tgl's Number"-->
+    <!--        android:inputType="phone"-->
+    <!--        android:textSize="24sp" />-->
