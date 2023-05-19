@@ -2,6 +2,7 @@ package com.example.sprint.Tgl
 
 import android.app.Activity
 import android.app.DatePickerDialog
+import android.content.Context
 import android.content.Intent
 import android.icu.util.Calendar
 import android.net.Uri
@@ -33,6 +34,13 @@ class TglUpdateFragment : Fragment() {
     private var selectedState = ""
     private val args by navArgs<TglUpdateFragmentArgs>()
     private lateinit var binding: FragmentTglUpdateBinding
+
+    lateinit var appDatabase: AppDatabase
+
+    override fun onAttach(context: Context) {
+        super.onAttach(context)
+        appDatabase = AppDatabase.getInstance(requireContext())
+    }
 
     companion object {
         private const val PICK_IMAGE_REQUEST = 1
@@ -195,7 +203,7 @@ class TglUpdateFragment : Fragment() {
                 else -> {
                     // All fields are valid
                     updateTglData()
-                    Toast.makeText(activity, "Registration Successful!",
+                    Toast.makeText(activity, "Update Successful!",
                         Toast.LENGTH_LONG).show()
                     clearInput()
                 }
