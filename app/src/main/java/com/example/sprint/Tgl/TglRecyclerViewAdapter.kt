@@ -22,7 +22,7 @@ class TglRecyclerViewAdapter(
         val name: TextView = view.findViewById(R.id.tvTglName)
         val state: TextView = view.findViewById(R.id.tvTglState)
         val edit: Button =  view.findViewById(R.id.btnEditTgl)
-        val test : Button = view.findViewById(R.id.btnTestTGL)
+        val test : Button = view.findViewById(R.id.btnScheduleTGL)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int):TglViewHolder {

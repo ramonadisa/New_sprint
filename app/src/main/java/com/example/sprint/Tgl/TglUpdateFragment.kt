@@ -76,28 +76,28 @@ class TglUpdateFragment : Fragment() {
         val factory = MainViewModelFactory(dao,officerdao)
         viewModel = ViewModelProvider(this, factory).get(MyViewModel::class.java)
 
-        val sex = resources.getStringArray(R.array.Sex)
-        val arrayAdapter = ArrayAdapter(requireContext(), R.layout.sex_list, sex)
-        binding.dropDownSex1.setAdapter(arrayAdapter)
+        val sex1 = resources.getStringArray(R.array.Sex)
+        val arrayAdapter1 = ArrayAdapter(requireContext(), R.layout.sex_list, sex1)
+        binding.dropDownSex1.setAdapter(arrayAdapter1)
 
-        val state = resources.getStringArray(R.array.State)
-        val adapterState = ArrayAdapter(requireContext(), R.layout.state_list, state)
-        binding.dropDownState1.setAdapter(adapterState)
+        val state1 = resources.getStringArray(R.array.State)
+        val adapterState1 = ArrayAdapter(requireContext(), R.layout.state_list, state1)
+        binding.dropDownState1.setAdapter(adapterState1)
 
-        val idType = resources.getStringArray(R.array.idType)
-        val adapterIDType = ArrayAdapter(requireContext(), R.layout.id_list, idType)
-        binding.dropDownIDType1.setAdapter(adapterIDType)
+        val idType1 = resources.getStringArray(R.array.idType)
+        val adapterIDType1 = ArrayAdapter(requireContext(), R.layout.id_list, idType1)
+        binding.dropDownIDType1.setAdapter(adapterIDType1)
 
         binding.etDOB1.setOnClickListener {
             showDatePickerDialog(binding.etDOB1)
         }
 
-        val lga = binding.etLGA1
+        val lga1 = binding.etLGA1
         binding.dropDownState1.setOnItemClickListener { parent, view, position, id ->
-            selectedState = adapterState.getItem(position).toString()
+            selectedState = adapterState1.getItem(position).toString()
             binding.etLGA1.setText("")
-            val lgaAdapter = ArrayAdapter(requireContext(), android.R.layout.simple_list_item_1, getLGA(selectedState))
-            lga.setAdapter(lgaAdapter)
+            val lgaAdapter1 = ArrayAdapter(requireContext(), android.R.layout.simple_list_item_1, getLGA(selectedState))
+            lga1.setAdapter(lgaAdapter1)
         }
 
         binding.etImage1.setOnClickListener {
@@ -128,43 +128,43 @@ class TglUpdateFragment : Fragment() {
 
     private fun checkInputData() {
         binding.apply {
-            val name = etName1.text.toString()
-            val number = etPhoneNumber1.text.toString()
-            val sex = dropDownSex1.text.toString()
-            val dob = etDOB1.text.toString()
-            val bvn = etBVN1.text.toString()
-            val nin = etNIN1.text.toString()
-            val state = dropDownState1.text.toString()
-            val lga = etLGA1.text.toString()
-            val hub = etHub1.text.toString()
-            val id = etID1.text.toString()
-            val idtype = dropDownIDType1.text.toString()
-            val image = selectedFileUri
+            val name1 = etName1.text.toString()
+            val number1 = etPhoneNumber1.text.toString()
+            val sex1 = dropDownSex1.text.toString()
+            val dob1 = etDOB1.text.toString()
+            val bvn1 = etBVN1.text.toString()
+            val nin1 = etNIN1.text.toString()
+            val state1 = dropDownState1.text.toString()
+            val lga1 = etLGA1.text.toString()
+            val hub1 = etHub1.text.toString()
+            val id1 = etID1.text.toString()
+            val idtype1 = dropDownIDType1.text.toString()
+            val image1 = selectedFileUri
 
             when {
-                name.length < 5 -> Toast.makeText(activity,
+                name1.length < 5 -> Toast.makeText(activity,
                     "Name must be at least 5 characters long", Toast.LENGTH_LONG).show()
-                number.length < 10 -> Toast.makeText(activity,
+                number1.length < 10 -> Toast.makeText(activity,
                     "Phone number must be at least 10 characters long", Toast.LENGTH_LONG).show()
-                sex.isEmpty() -> Toast.makeText(activity,
+                sex1.isEmpty() -> Toast.makeText(activity,
                     "Please select a gender", Toast.LENGTH_LONG).show()
-                dob.isEmpty() -> Toast.makeText(activity,
+                dob1.isEmpty() -> Toast.makeText(activity,
                     "Please enter your date of birth", Toast.LENGTH_LONG).show()
-                bvn.length < 11 -> Toast.makeText(activity,
+                bvn1.length < 11 -> Toast.makeText(activity,
                     "BVN must be at least 11 characters long", Toast.LENGTH_LONG).show()
-                nin.length < 11 -> Toast.makeText(activity,
+                nin1.length < 11 -> Toast.makeText(activity,
                     "NIN must be at least 11 characters long", Toast.LENGTH_LONG).show()
-                state.isEmpty() -> Toast.makeText(activity,
+                state1.isEmpty() -> Toast.makeText(activity,
                     "Please select a state", Toast.LENGTH_LONG).show()
-                lga.isEmpty() -> Toast.makeText(activity,
+                lga1.isEmpty() -> Toast.makeText(activity,
                     "Please enter your LGA", Toast.LENGTH_LONG).show()
-                hub.isEmpty() -> Toast.makeText(activity,
+                hub1.isEmpty() -> Toast.makeText(activity,
                     "Please enter your hub", Toast.LENGTH_LONG).show()
-                id.isEmpty() -> Toast.makeText(activity,
+                id1.isEmpty() -> Toast.makeText(activity,
                     "Please enter your ID number", Toast.LENGTH_LONG).show()
-                idtype.isEmpty() -> Toast.makeText(activity,
+                idtype1.isEmpty() -> Toast.makeText(activity,
                     "Please select an ID type", Toast.LENGTH_LONG).show()
-                image == null -> Toast.makeText(activity,
+                image1 == null -> Toast.makeText(activity,
                     "Please select an Image", Toast.LENGTH_LONG).show()
                 else -> {
                     // All fields are valid
