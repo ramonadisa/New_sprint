@@ -35,13 +35,6 @@ class TglUpdateFragment : Fragment() {
     private val args by navArgs<TglUpdateFragmentArgs>()
     private lateinit var binding: FragmentTglUpdateBinding
 
-    lateinit var appDatabase: AppDatabase
-
-    override fun onAttach(context: Context) {
-        super.onAttach(context)
-        appDatabase = AppDatabase.getInstance(requireContext())
-    }
-
     companion object {
         private const val PICK_IMAGE_REQUEST = 1
     }
@@ -113,6 +106,7 @@ class TglUpdateFragment : Fragment() {
 
         binding.btnUpdateTgl.setOnClickListener {
             checkInputData()
+            navController.navigate(R.id.action_tglUpdateFragment2_to_tglTestFragment)
         }
     }
 
@@ -129,34 +123,6 @@ class TglUpdateFragment : Fragment() {
         if (requestCode == TglUpdateFragment.PICK_IMAGE_REQUEST && resultCode == Activity.RESULT_OK && data != null && data.data != null) {
             selectedFileUri = data.data
             binding.etImage1.setImageURI(selectedFileUri)
-        }
-    }
-
-    private fun updateTglData() {
-        binding.apply {
-            val tglIdentification = TglIdentification(
-                0,
-                etName1.text.toString(),
-                etPhoneNumber1.text.toString(),
-                dropDownSex1.text.toString(),
-                etDOB1.text.toString(),
-                etBVN1.text.toString(),
-                etNIN1.text.toString(),
-                dropDownState1.text.toString(),
-                etLGA1.text.toString(),
-                etHub1.text.toString(),
-                etID1.text.toString(),
-                dropDownIDType1.text.toString(),
-                selectedFileUri.toString(),
-            )
-
-            selectedFileUri?.let {
-                viewModel.updateTglIdentification(
-                    tglIdentification,
-                    requireContext(), // pass the context of the fragment
-                    it // pass the selected image Uri
-                )
-            }
         }
     }
 
@@ -207,6 +173,34 @@ class TglUpdateFragment : Fragment() {
                         Toast.LENGTH_LONG).show()
                     clearInput()
                 }
+            }
+        }
+    }
+
+    private fun updateTglData() {
+        binding.apply {
+            val tglIdentification = TglIdentification(
+                null,
+                etName1.text.toString(),
+                etPhoneNumber1.text.toString(),
+                dropDownSex1.text.toString(),
+                etDOB1.text.toString(),
+                etBVN1.text.toString(),
+                etNIN1.text.toString(),
+                dropDownState1.text.toString(),
+                etLGA1.text.toString(),
+                etHub1.text.toString(),
+                etID1.text.toString(),
+                dropDownIDType1.text.toString(),
+                selectedFileUri.toString(),
+            )
+
+            selectedFileUri?.let {
+                viewModel.updateTglIdentification(
+                    tglIdentification,
+                    requireContext(), // pass the context of the fragment
+                    it // pass the selected image Uri
+                )
             }
         }
     }

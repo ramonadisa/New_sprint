@@ -114,7 +114,7 @@ class TglRegFragment : Fragment() {
     private fun saveTglData() {
         binding.apply {
             val tglIdentification = TglIdentification(
-                0,
+                null,
                 etName.text.toString(),
                 etPhoneNumber.text.toString(),
                 dropDownSex.text.toString(),

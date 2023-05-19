@@ -27,7 +27,8 @@ data class Officer(
 data class TglIdentification(
     @PrimaryKey(autoGenerate = true)
     @ColumnInfo(name = "tgl_id")
-    var id: Int,
+//    var id: Int,
+    var id: Int? = null,
     @ColumnInfo(name = "full_name")
     var fullName: String,
     @ColumnInfo(name = "phone_number")

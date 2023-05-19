@@ -5,7 +5,7 @@ import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
 
-@Database(entities = [Officer::class, TglIdentification::class], version = 15, exportSchema = false)
+@Database(entities = [Officer::class, TglIdentification::class], version = 16, exportSchema = false)
 //@TypeConverters(EditableConverter::class, DateConverter::class)
 abstract class AppDatabase : RoomDatabase() {
 
